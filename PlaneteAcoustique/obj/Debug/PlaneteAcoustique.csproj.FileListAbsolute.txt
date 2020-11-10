@@ -1,0 +1,14 @@
+C:\Users\LOUKILI\Desktop\PlaneteAcoustique\PlaneteAcoustique\bin\PlaneteAcoustique.dll
+C:\Users\LOUKILI\Desktop\PlaneteAcoustique\PlaneteAcoustique\bin\PlaneteAcoustique.pdb
+C:\Users\LOUKILI\Desktop\PlaneteAcoustique\PlaneteAcoustique\obj\Debug\PlaneteAcoustique.dll
+C:\Users\LOUKILI\Desktop\PlaneteAcoustique\PlaneteAcoustique\obj\Debug\PlaneteAcoustique.pdb
+C:\Users\LOUKILI\Desktop\PlaneteAcoustique\PlaneteAcoustique\obj\Debug\RdlCompile.cache
+C:\Users\LOUKILI\Desktop\PlaneteAcoustique\PlaneteAcoustique\obj\Debug\RdlCompile.compiled
+C:\Users\LOUKILI\Desktop\PlaneteAcoustique\PlaneteAcoustique\obj\Debug\PlaneteAcoustique.csprojResolveAssemblyReference.cache
+C:\Users\LOUKILI\Desktop\Projet Fin d'étude\Application\PlaneteAcoustique\PlaneteAcoustique\bin\PlaneteAcoustique.dll
+C:\Users\LOUKILI\Desktop\Projet Fin d'étude\Application\PlaneteAcoustique\PlaneteAcoustique\bin\PlaneteAcoustique.pdb
+C:\Users\LOUKILI\Desktop\Projet Fin d'étude\Application\PlaneteAcoustique\PlaneteAcoustique\obj\Debug\PlaneteAcoustique.csprojResolveAssemblyReference.cache
+C:\Users\LOUKILI\Desktop\Projet Fin d'étude\Application\PlaneteAcoustique\PlaneteAcoustique\obj\Debug\RdlCompile.cache
+C:\Users\LOUKILI\Desktop\Projet Fin d'étude\Application\PlaneteAcoustique\PlaneteAcoustique\obj\Debug\RdlCompile.compiled
+C:\Users\LOUKILI\Desktop\Projet Fin d'étude\Application\PlaneteAcoustique\PlaneteAcoustique\obj\Debug\PlaneteAcoustique.dll
+C:\Users\LOUKILI\Desktop\Projet Fin d'étude\Application\PlaneteAcoustique\PlaneteAcoustique\obj\Debug\PlaneteAcoustique.pdb

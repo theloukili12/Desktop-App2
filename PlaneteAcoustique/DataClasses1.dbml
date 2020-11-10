@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TissyrePartner" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.;Initial Catalog=TissyrePartner;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TissyrePartnerConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Congées" Member="Congées">
+    <Type Name="Congées">
+      <Column Name="IdCongée" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdEmploye" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateCongé" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Motif" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NombreJour" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employe_Congées" Member="Employe" ThisKey="IdEmploye" OtherKey="IdPersonne" Type="Employe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Service" Member="Service">
+    <Type Name="Service">
+      <Column Name="IdService" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NomService" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SalaireNet" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Association Name="Service_HistoriqueEmploye" Member="HistoriqueEmploye" ThisKey="IdService" OtherKey="IdService" Type="HistoriqueEmploye" />
+      <Association Name="Service_Employe" Member="Employe" ThisKey="IdService" OtherKey="IdService" Type="Employe" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HistoriqueEmploye" Member="HistoriqueEmploye">
+    <Type Name="HistoriqueEmploye">
+      <Column Name="IdEmploye" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Cin" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Prenom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Adresse" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Ville" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nationalite" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Pays" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateEmbauche" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateSortie" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IdService" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Service_HistoriqueEmploye" Member="Service" ThisKey="IdService" OtherKey="IdService" Type="Service" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Employe" Member="Employe">
+    <Type Name="Employe">
+      <Column Name="IdPersonne" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Prenom" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Cin" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Adresse" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Ville" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Telephone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nationalite" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Pays" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DN" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DateEmbauche" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Situationfamilial" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nbenfants" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdService" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="jrsrestantconges" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Employe_Congées" Member="Congées" ThisKey="IdPersonne" OtherKey="IdEmploye" Type="Congées" />
+      <Association Name="Employe_DemandeCongé" Member="DemandeCongé" ThisKey="IdPersonne" OtherKey="IdEmploye" Type="DemandeCongé" />
+      <Association Name="Employe_CongéesAccordé" Member="CongéesAccordé" ThisKey="IdPersonne" OtherKey="IdEmploye" Type="CongéesAccordé" />
+      <Association Name="Employe_CongéesRefusé" Member="CongéesRefusé" ThisKey="IdPersonne" OtherKey="IdEmploye" Type="CongéesRefusé" />
+      <Association Name="Service_Employe" Member="Service" ThisKey="IdService" OtherKey="IdService" Type="Service" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DemandeCongé" Member="DemandeCongé">
+    <Type Name="DemandeCongé">
+      <Column Name="IdCongée" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="DateDebut" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DateFin" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Motif" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IdEmploye" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employe_DemandeCongé" Member="Employe" ThisKey="IdEmploye" OtherKey="IdPersonne" Type="Employe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CongéesAccordé" Member="CongéesAccordé">
+    <Type Name="CongéesAccordé">
+      <Column Name="IdCongée" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdEmploye" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateCongé" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Motif" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NombreJour" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employe_CongéesAccordé" Member="Employe" ThisKey="IdEmploye" OtherKey="IdPersonne" Type="Employe" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CongéesRefusé" Member="CongéesRefusé">
+    <Type Name="CongéesRefusé">
+      <Column Name="IdCongée" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IdEmploye" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DateCongé" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Motif" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NombreJour" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Employe_CongéesRefusé" Member="Employe" ThisKey="IdEmploye" OtherKey="IdPersonne" Type="Employe" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
